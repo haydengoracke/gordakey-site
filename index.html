@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
+<meta name="theme-color" content="#EFEBE2">
+<link rel="canonical" href="https://gordakey.com/">
+<title>Gordakey. - The growth partner for service businesses</title>
+<meta name="description" content="Gordakey builds and runs the lead, booking, and follow-up systems that grow home-services businesses. Built, managed, proven.">
+<meta property="og:title" content="Gordakey. - The growth partner for service businesses">
+<meta property="og:description" content="We find what's costing your business, and build the fix. Lead, booking, and follow-up systems, built and managed in-house.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gordakey.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://gordakey.com/og-image.png">
+<meta name="twitter:image" content="https://gordakey.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   GORDAKEY - design-system tokens (warm Stone ramp + one caramel).
+   Light default. Self-contained. The period is the signature.
+   ============================================================ */
+:root{
+  --stone-000:#FCFBF8; --stone-025:#F4F0E8; --stone-050:#EFEBE2; --stone-100:#E9E3D8;
+  --stone-200:#D8D0C0; --stone-300:#BDB4A2; --stone-400:#A89E8C; --stone-500:#8A8276;
+  --stone-600:#6E675C; --stone-700:#4A463F; --stone-800:#2E2A24; --stone-900:#1B1A18; --stone-999:#100F0D;
+  --caramel-300:#E3C39B; --caramel-400:#D9AE78; --caramel-500:#CF9457; --caramel-600:#BC7F45;
+  --caramel-700:#A86E34; --caramel-800:#855424; --caramel-900:#5E3A18;
+  --canvas:var(--stone-050); --surface:var(--stone-000); --surface-inset:var(--stone-025); --surface-contrast:var(--stone-900);
+  --border:#E4DDD0; --border-strong:var(--stone-200); --hairline:#ECE6DA;
+  --text:var(--stone-900); --text-body:var(--stone-700); --text-muted:var(--stone-600); --text-faint:var(--stone-500);
+  --text-on-contrast:var(--stone-100); --text-on-accent:#1B1410;
+  --accent:var(--caramel-500); --accent-hover:var(--caramel-600); --accent-text:var(--caramel-700); --accent-emphasis:var(--caramel-800);
+  --focus-ring:rgba(207,148,87,.20);
+  --font-display:'Outfit',system-ui,sans-serif;
+  --font-body:'Hanken Grotesk',system-ui,sans-serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+  --radius-sm:6px; --radius-md:9px; --radius-lg:14px; --radius-xl:24px; --radius-full:9999px;
+  --shadow-e1:0 1px 2px rgba(75,58,34,.06);
+  --shadow-e2:0 10px 28px -12px rgba(75,58,34,.20);
+  --shadow-e3:0 28px 60px -22px rgba(75,58,34,.30);
+  --shadow-accent:0 14px 32px -14px rgba(207,148,87,.55);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --maxw:1160px;
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--canvas);color:var(--text-body);
+  font-family:var(--font-body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+main{display:block;}
+a{color:inherit;text-decoration:none;}
+b,strong{font-weight:600;color:var(--text);}
+p{text-wrap:pretty;}
+img,svg{display:block;}
+::selection{background:rgba(207,148,87,.26);}
+
+/* ---------- wordmark ---------- */
+.gk-wordmark{font-family:var(--font-display);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--text);display:inline-flex;align-items:flex-end;}
+.gk-wordmark>i{width:.2em;height:.2em;border-radius:50%;background:var(--accent);display:inline-block;margin-left:.07em;margin-bottom:.05em;}
+
+/* ---------- buttons ---------- */
+.btn{font-family:var(--font-display);font-weight:600;line-height:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  cursor:pointer;text-decoration:none;border:1px solid transparent;white-space:nowrap;-webkit-font-smoothing:antialiased;
+  transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease),transform .12s var(--ease),box-shadow .18s var(--ease);}
+.btn:active{transform:translateY(1px);}
+.btn-sm{padding:9px 17px;font-size:13.5px;border-radius:var(--radius-md);}
+.btn-md{padding:13px 24px;font-size:15px;border-radius:var(--radius-md);}
+.btn-lg{padding:16px 30px;font-size:16px;border-radius:var(--radius-md);}
+.btn-primary{background:var(--accent);color:var(--text-on-accent);box-shadow:var(--shadow-accent);}
+.btn-primary:hover{background:var(--accent-hover);}
+.btn-secondary{background:var(--surface);color:var(--text);border-color:var(--border-strong);}
+.btn-secondary:hover{border-color:var(--text);}
+.btn svg{width:1em;height:1em;}
+
+/* ---------- layout primitives ---------- */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+.section{padding:64px 0;}
+.section--tight{padding:48px 0;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent-text);}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;}
+.shead{max-width:680px;margin-bottom:36px;}
+.shead h2{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,4vw,46px);
+  letter-spacing:-1.6px;line-height:1.06;color:var(--text);margin:18px 0 0;text-wrap:balance;}
+.shead .dek{font-size:18px;line-height:1.6;color:var(--text-muted);margin:16px 0 0;max-width:62ch;}
+.period{color:var(--accent);}
+.arrow-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--accent-text);}
+.arrow-link svg{width:15px;height:15px;transition:transform .18s var(--ease);}
+.arrow-link:hover svg{transform:translateX(4px);}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--canvas) 84%,transparent);
+  backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);
+  border-bottom:1px solid transparent;transition:border-color .2s ease,box-shadow .2s ease;}
+.nav[data-scrolled="true"]{border-bottom-color:var(--border);box-shadow:0 8px 24px -16px rgba(75,58,34,.28);}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:16px 32px;display:flex;align-items:center;gap:24px;}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:26px;}
+.nav-link{position:relative;font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--text-body);transition:color .15s ease;}
+.nav-link:hover{color:var(--text);}
+.nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .22s var(--ease);}
+.nav-link:hover::after{transform:scaleX(1);}
+
+/* ============ HERO ============ */
+.hero{position:relative;overflow:hidden;padding:72px 0 56px;}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(1200px 720px at 92% -8%,rgba(207,148,87,.18),transparent 56%);}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(133,84,36,.05) 1px,transparent 1.6px);background-size:30px 30px;
+  -webkit-mask-image:radial-gradient(900px 600px at 30% 20%,#000,transparent 75%);mask-image:radial-gradient(900px 600px at 30% 20%,#000,transparent 75%);}
+.hero .container{position:relative;z-index:1;}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center;}
+.hero-h1{font-family:var(--font-display);font-weight:800;font-size:clamp(44px,6.4vw,78px);
+  letter-spacing:-3px;line-height:.98;color:var(--text);margin:26px 0 0;text-wrap:balance;}
+.hero-sub{font-size:20px;line-height:1.58;color:var(--text-body);max-width:33ch;margin:24px 0 0;}
+.hero-sub b{color:var(--text);}
+.hero-cta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:34px;}
+.hero-trust{display:flex;align-items:flex-start;gap:11px;margin-top:30px;padding-top:22px;
+  border-top:1px solid var(--border);max-width:430px;
+  font-size:14px;line-height:1.5;color:var(--text-muted);}
+.hero-trust .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;margin-top:6px;}
+.hero-trust b{color:var(--text-body);font-weight:600;}
+
+/* hero product-glimpse panel */
+.demo{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-e3);padding:22px;position:relative;}
+.demo::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);}
+.demo-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+.demo-live{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent-text);}
+.demo-pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);position:relative;flex:none;}
+.demo-pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--accent);animation:pulse 2.2s var(--ease) infinite;}
+@keyframes pulse{0%{transform:scale(1);opacity:.55;}70%{transform:scale(3);opacity:0;}100%{opacity:0;}}
+.demo-label{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-faint);}
+.demo-call{background:var(--surface-inset);border:1px solid var(--hairline);border-radius:var(--radius-md);padding:16px;}
+.demo-row{display:flex;align-items:center;gap:13px;}
+.demo-ic{width:40px;height:40px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent-text);flex:none;box-shadow:var(--shadow-e1);}
+.demo-ic svg{width:19px;height:19px;}
+.demo-name{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--text);}
+.demo-meta{font-size:12.5px;color:var(--text-muted);}
+.demo-time{margin-left:auto;font-family:var(--font-mono);font-size:13px;color:var(--text-muted);}
+.demo-steps{margin-top:14px;display:flex;flex-direction:column;gap:9px;}
+.demo-step{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--text-body);}
+.demo-step svg{width:16px;height:16px;color:var(--accent);flex:none;}
+.demo-foot{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+.demo-fig{display:block;font-family:var(--font-mono);font-weight:700;font-size:24px;letter-spacing:-1px;color:var(--text);}
+.demo-fcap{display:block;font-size:12px;color:var(--text-muted);margin-top:3px;line-height:1.35;}
+.demo-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.demo-tab{font-family:var(--font-display);font-weight:600;font-size:11.5px;letter-spacing:.3px;color:var(--text-muted);
+  background:transparent;border:1px solid transparent;border-radius:var(--radius-full);padding:6px 13px;cursor:pointer;
+  transition:color .15s var(--ease),background .15s var(--ease);}
+.demo-tab:hover{color:var(--text);background:var(--surface-inset);}
+.demo-tab.is-active{color:var(--text-on-accent);background:var(--accent);}
+.demo-panel[hidden]{display:none;}
+.demo-panel{animation:demoIn .22s var(--ease);}
+@keyframes demoIn{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
+
+/* ============ MARQUEE / TRADES ============ */
+.trades{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);}
+.trades-in{max-width:var(--maxw);margin:0 auto;padding:22px 32px;display:flex;align-items:center;gap:14px 40px;flex-wrap:wrap;justify-content:center;}
+.trades-lab{font-family:var(--font-display);font-weight:600;font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--text-faint);}
+.trades-item{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--text-muted);}
+
+/* ============ THE LEAK (dark band - the early split) ============ */
+.section--dark{position:relative;overflow:hidden;background:var(--surface-contrast);color:var(--text-on-contrast);padding:72px 0;}
+.section--dark::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(207,148,87,.13) 1.1px,transparent 1.5px);background-size:28px 28px;opacity:.5;}
+.section--dark::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(960px 540px at 85% -12%,rgba(207,148,87,.16),transparent 58%);}
+.section--dark>.container{position:relative;z-index:1;}
+.section--dark .eyebrow{color:var(--caramel-400);}
+.section--dark .shead{max-width:880px;}
+.section--dark .shead h2{color:#F4EFE6;font-size:clamp(36px,5.2vw,58px);letter-spacing:-2.4px;line-height:1.04;}
+.section--dark .shead .dek{color:var(--stone-300);}
+.leak-figs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.12);margin-top:4px;}
+.leak-figs .fig{padding:34px 26px 0 0;border-right:1px solid rgba(255,255,255,.08);}
+.leak-figs .fig:last-child{border-right:none;padding-right:0;}
+.leak-fn{font-family:var(--font-display);font-weight:700;font-size:clamp(40px,5vw,54px);letter-spacing:-2px;line-height:1;color:var(--caramel-400);font-variant-numeric:tabular-nums;}
+.leak-ft{font-size:14px;line-height:1.5;color:var(--stone-400);margin-top:14px;max-width:240px;}
+.leak-note{margin-top:32px;font-size:18px;line-height:1.6;color:var(--stone-300);max-width:64ch;}
+.leak-note b{color:#F4EFE6;}
+
+/* ============ METHOD ============ */
+.method{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.step{position:relative;}
+.step-ic{width:52px;height:52px;border-radius:var(--radius-md);background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-e1);
+  display:flex;align-items:center;justify-content:center;color:var(--accent-text);}
+.step-ic svg{width:24px;height:24px;}
+.step-k{position:absolute;top:0;right:0;font-family:var(--font-mono);font-size:12px;color:var(--text-faint);}
+.step-t{font-family:var(--font-display);font-weight:600;font-size:21px;letter-spacing:-.5px;color:var(--text);margin-top:22px;}
+.step-b{font-size:15.5px;line-height:1.6;color:var(--text-muted);margin-top:9px;}
+
+/* ============ PROOF (dark signature block) ============ */
+.proof{position:relative;overflow:hidden;background:var(--surface-contrast);color:var(--text-on-contrast);
+  border-radius:var(--radius-xl);padding:64px 56px;box-shadow:var(--shadow-e3);}
+.proof::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(207,148,87,.14) 1.1px,transparent 1.5px);background-size:28px 28px;opacity:.55;}
+.proof::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(800px 460px at 88% -12%,rgba(207,148,87,.20),transparent 58%);}
+.proof-in{position:relative;z-index:1;}
+.proof .eyebrow{color:var(--caramel-400);}
+.proof-lead{font-family:var(--font-display);font-weight:500;font-size:clamp(21px,2.4vw,28px);letter-spacing:-.5px;line-height:1.34;
+  color:#F1EADB;max-width:30ch;margin:18px 0 0;}
+.proof-lead b{font-weight:700;color:#F4EFE6;}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px 28px;margin-top:48px;
+  border-top:1px solid rgba(255,255,255,.12);padding-top:44px;}
+.proof-n{font-family:var(--font-display);font-weight:700;font-size:clamp(40px,4.4vw,58px);letter-spacing:-2.5px;line-height:1;
+  color:#F4EFE6;display:inline-flex;align-items:flex-start;font-variant-numeric:tabular-nums;}
+.proof-n i{color:var(--accent);font-style:normal;}
+.proof-t{font-size:13.5px;line-height:1.5;color:var(--stone-400);margin-top:14px;}
+
+/* ============ CAPABILITIES ============ */
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;}
+.cap{background:var(--surface);padding:28px 26px;transition:background .18s var(--ease);}
+.cap:hover{background:var(--surface-inset);}
+.cap-head{display:flex;align-items:center;gap:13px;margin-bottom:16px;}
+.cap-ic{width:38px;height:38px;border-radius:10px;background:var(--surface-inset);display:flex;align-items:center;justify-content:center;color:var(--accent-text);flex:none;}
+.cap-ic svg{width:19px;height:19px;}
+.cap:hover .cap-ic{background:var(--surface);}
+.cap-t{font-family:var(--font-display);font-weight:600;font-size:16.5px;letter-spacing:-.3px;color:var(--text);}
+.cap-list{list-style:none;margin:0;padding:0;}
+.cap-list li{padding:7px 0;font-size:14px;line-height:1.4;color:var(--text-muted);border-top:1px solid var(--hairline);}
+.cap-list li:first-child{border-top:none;}
+.caps-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:34px;flex-wrap:wrap;}
+.caps-note{font-size:17px;line-height:1.55;color:var(--text-muted);margin:0;max-width:58ch;}
+.caps-note b{color:var(--text);}
+
+/* ============ PRICING ============ */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.price{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-e1);padding:32px 28px;transition:transform .18s var(--ease),box-shadow .18s var(--ease);}
+.price:hover{transform:translateY(-5px);box-shadow:var(--shadow-e2);}
+.price--f{background:var(--surface-contrast);border-color:transparent;box-shadow:var(--shadow-e3);}
+.price--f:hover{box-shadow:var(--shadow-e3);}
+.price-flag{position:absolute;top:-11px;left:28px;font-family:var(--font-display);font-weight:600;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--text-on-accent);background:var(--accent);padding:5px 12px;border-radius:var(--radius-full);box-shadow:var(--shadow-accent);}
+.price-role{font-family:var(--font-display);font-weight:600;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent-text);}
+.price-name{font-family:var(--font-display);font-weight:700;font-size:23px;letter-spacing:-.6px;color:var(--text);margin-top:7px;}
+.price-amt{display:flex;align-items:baseline;gap:8px;margin-top:20px;}
+.price-amt .n{font-family:var(--font-mono);font-weight:700;font-size:34px;letter-spacing:-1.5px;color:var(--text);}
+.price-amt .mo{font-family:var(--font-mono);font-size:13px;color:var(--text-muted);}
+.price-hr{height:1px;background:var(--border);margin:22px 0;}
+.price-sc{font-size:14.5px;line-height:1.55;color:var(--text-body);}
+.price-go{margin-top:auto;padding-top:24px;}
+.price-go .btn{width:100%;}
+.price--f .price-name,.price--f .price-amt .n{color:#F4EFE6;}
+.price--f .price-role,.price--f .price-amt .mo{color:var(--caramel-400);}
+.price--f .price-sc{color:var(--stone-300);}
+.price--f .price-hr{background:rgba(255,255,255,.14);}
+.price-cap{font-size:16px;color:var(--text-muted);margin:30px 0 0;max-width:60ch;}
+.price-cap b{color:var(--text);}
+
+/* ============ PATH + GUARANTEE ============ */
+.path-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;}
+.steps li{counter-increment:s;display:flex;gap:18px;padding:16px 0;font-size:16px;line-height:1.55;color:var(--text-body);border-top:1px solid var(--border);}
+.steps li:first-child{border-top:none;padding-top:0;}
+.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-e1);color:var(--accent-text);
+  font-family:var(--font-display);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.steps b{font-family:var(--font-display);font-weight:600;color:var(--text);}
+.guarantee{background:var(--surface-contrast);color:var(--text-on-contrast);border-radius:var(--radius-lg);padding:30px 28px;box-shadow:var(--shadow-e3);}
+.guarantee-head{display:flex;align-items:center;gap:12px;}
+.guarantee-ic{width:40px;height:40px;border-radius:10px;background:rgba(207,148,87,.16);display:flex;align-items:center;justify-content:center;color:var(--accent);flex:none;}
+.guarantee-ic svg{width:21px;height:21px;}
+.guarantee-t{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.4px;color:#F4EFE6;}
+.guarantee-b{font-size:14.5px;line-height:1.6;color:var(--stone-300);margin-top:16px;}
+.guarantee-b b{color:#F4EFE6;}
+
+/* ============ FAQ ============ */
+.faq{max-width:840px;}
+.faq details{border-top:1px solid var(--border);}
+.faq details:last-child{border-bottom:1px solid var(--border);}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:18px;
+  font-family:var(--font-display);font-weight:600;font-size:17.5px;letter-spacing:-.2px;color:var(--text);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq .pl{position:relative;width:16px;height:16px;flex:none;}
+.faq .pl::before,.faq .pl::after{content:"";position:absolute;background:var(--accent);transition:transform .25s var(--ease);}
+.faq .pl::before{left:0;right:0;top:7px;height:2px;}
+.faq .pl::after{top:0;bottom:0;left:7px;width:2px;}
+.faq details[open] .pl::after{transform:scaleY(0);}
+.faq .ans{padding:0 0 24px;font-size:15.5px;line-height:1.65;color:var(--text-body);max-width:70ch;}
+.faq details[open] .ans{animation:fade .3s var(--ease);}
+@keyframes fade{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
+
+/* ============ CLOSE CTA ============ */
+.cta{position:relative;overflow:hidden;background:var(--accent);border-radius:var(--radius-xl);
+  padding:48px 56px;text-align:center;box-shadow:var(--shadow-accent);}
+.cta::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(94,58,24,.18) 1px,transparent 1.6px);background-size:26px 26px;}
+.cta-in{position:relative;z-index:1;}
+.cta-t{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,4vw,46px);letter-spacing:-1.8px;line-height:1.04;
+  color:var(--text-on-accent);max-width:16ch;margin:0 auto;}
+.cta-s{font-size:17px;line-height:1.55;color:rgba(27,20,16,.74);margin:18px auto 0;max-width:46ch;}
+.cta-btn{margin-top:26px;}
+.cta .btn-dark{background:var(--stone-900);color:#F4EFE6;}
+.cta .btn-dark:hover{background:var(--stone-999);}
+
+/* ============ FOOTER ============ */
+.footer{border-top:1px solid var(--border);background:var(--surface);}
+.footer-in{max-width:var(--maxw);margin:0 auto;padding:34px 32px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;}
+.footer-contact{font-family:var(--font-mono);font-size:12.5px;color:var(--text-muted);}
+.footer-contact a{color:var(--accent-text);}
+.footer-contact .sep{opacity:.5;margin:0 4px;}
+
+/* ============ skip link + focus ============ */
+.skip{position:absolute;left:16px;top:-56px;z-index:100;background:var(--surface);color:var(--text);border:1px solid var(--border-strong);
+  border-radius:var(--radius-sm);padding:10px 16px;font-family:var(--font-display);font-weight:600;font-size:13px;transition:top .18s ease;}
+.skip:focus{top:16px;}
+#main:focus{outline:none;}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--radius-sm);}
+.price:focus-within{box-shadow:var(--shadow-e2);}
+
+/* ============ motion / reveal ============ */
+html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+html.js .reveal.is-in{opacity:1;transform:none;}
+html.js .reveal-d1{transition-delay:.08s;}
+html.js .reveal-d2{transition-delay:.16s;}
+html.js .reveal-d3{transition-delay:.24s;}
+
+/* ============ responsive ============ */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:48px;}
+  .hero-sub{max-width:52ch;}
+  .demo{max-width:440px;}
+  .proof-grid{grid-template-columns:1fr 1fr;gap:32px 24px;}
+  .path-grid{grid-template-columns:1fr;gap:32px;}
+}
+@media(max-width:760px){
+  .section{padding:52px 0;}
+  .section--tight{padding:40px 0;}
+  .section--dark{padding:60px 0;}
+  .leak-figs{grid-template-columns:1fr;}
+  .leak-figs .fig{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:24px 0;}
+  .method{grid-template-columns:1fr;gap:36px;}
+  .caps{grid-template-columns:1fr 1fr;}
+  .price-grid{grid-template-columns:1fr;}
+  .proof{padding:48px 30px;}
+  .cta{padding:40px 28px;}
+}
+@media(max-width:520px){
+  .container,.nav-in,.footer-in,.trades-in{padding-left:20px;padding-right:20px;}
+  .hero{padding:60px 0 72px;}
+  .nav-link.hide-sm{display:none;}
+  .caps{grid-template-columns:1fr;}
+  .proof-grid{grid-template-columns:1fr 1fr;}
+  .demo-foot{grid-template-columns:1fr 1fr;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  html.js .reveal{opacity:1 !important;transform:none !important;}
+  .demo-pulse::after{animation:none;}
+  *{transition:none !important;animation:none !important;}
+}
+
+@media print{
+  .nav,.skip{display:none;}
+  html.js .reveal{opacity:1 !important;transform:none !important;}
+  .proof,.price,.cta,.demo,.guarantee{box-shadow:none !important;}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Gordakey","url":"https://gordakey.com","email":"hello@gordakey.com","description":"Gordakey builds and runs the lead, booking, and follow-up systems that grow home-services businesses. Built, managed, proven.","slogan":"Growth systems for service businesses."}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a href="/" aria-label="Gordakey home" style="display:inline-flex"><span class="gk-wordmark" style="font-size:23px">Gordakey<i></i></span></a>
+    <div class="nav-links">
+      <a class="nav-link hide-sm" href="proof.html">Proof</a>
+      <a class="nav-link hide-sm" href="#pricing">Pricing</a>
+      <a class="btn btn-primary btn-sm" href="book.html">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Growth systems for service businesses</span>
+          <h1 class="hero-h1">The growth partner for service businesses<span class="period">.</span></h1>
+          <p class="hero-sub">One team building the lead, booking, and follow-up systems that grow service businesses. <b>Built, managed, proven.</b></p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="book.html">Book a call</a>
+            <a class="btn btn-secondary btn-lg" href="proof.html">See the proof</a>
+          </div>
+          <div class="hero-trust"><span class="dot"></span><span>Proven across <b>thousands of real calls</b>. Live in roofing, landscaping, and home-building.</span></div>
+        </div>
+
+        <aside class="demo" aria-label="The system, working">
+          <div class="demo-head">
+            <span class="demo-live"><span class="demo-pulse"></span>Live</span>
+            <span class="demo-label" id="demo-label">AI receptionist</span>
+          </div>
+          <div class="demo-tabs" role="tablist" aria-label="What the system runs">
+            <button class="demo-tab is-active" role="tab" id="dt-answer" aria-controls="dp-answer" aria-selected="true" data-tab="answer" data-label="AI receptionist">Answer</button>
+            <button class="demo-tab" role="tab" id="dt-chase" aria-controls="dp-chase" aria-selected="false" tabindex="-1" data-tab="chase" data-label="Speed-to-lead">Chase</button>
+            <button class="demo-tab" role="tab" id="dt-quote" aria-controls="dp-quote" aria-selected="false" tabindex="-1" data-tab="quote" data-label="Quoting">Quote</button>
+            <button class="demo-tab" role="tab" id="dt-reviews" aria-controls="dp-reviews" aria-selected="false" tabindex="-1" data-tab="reviews" data-label="Reputation">Reviews</button>
+            <button class="demo-tab" role="tab" id="dt-sync" aria-controls="dp-sync" aria-selected="false" tabindex="-1" data-tab="sync" data-label="CRM integration">Sync</button>
+          </div>
+
+          <div class="demo-panel" id="dp-answer" role="tabpanel" aria-labelledby="dt-answer">
+            <div class="demo-call">
+              <div class="demo-row">
+                <span class="demo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.86.7 2.73a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.35-1.35a2 2 0 0 1 2.11-.45c.87.34 1.79.57 2.73.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <div>
+                  <div class="demo-name">Incoming call</div>
+                  <div class="demo-meta">New caller, 6:14 PM</div>
+                </div>
+                <span class="demo-time">0:02</span>
+              </div>
+              <div class="demo-steps">
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Answered before the second ring</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Qualified buyer, routed to sales</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Logged to the CRM, assigned</div>
+              </div>
+            </div>
+            <div class="demo-foot">
+              <div><span class="demo-fig">636</span><span class="demo-fcap">calls answered in one month, one client</span></div>
+              <div><span class="demo-fig">0</span><span class="demo-fcap">sent to voicemail</span></div>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="dp-chase" role="tabpanel" aria-labelledby="dt-chase" hidden>
+            <div class="demo-call">
+              <div class="demo-row">
+                <span class="demo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                <div>
+                  <div class="demo-name">Missed call caught</div>
+                  <div class="demo-meta">Web form, 9:42 PM</div>
+                </div>
+                <span class="demo-time">27s</span>
+              </div>
+              <div class="demo-steps">
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Text-back sent in under a minute</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Booked a slot over text</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Reminder set before the visit</div>
+              </div>
+            </div>
+            <div class="demo-foot">
+              <div><span class="demo-fig">&lt;1 min</span><span class="demo-fcap">from new lead to first contact</span></div>
+              <div><span class="demo-fig">24/7</span><span class="demo-fcap">nights and weekends covered</span></div>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="dp-quote" role="tabpanel" aria-labelledby="dt-quote" hidden>
+            <div class="demo-call">
+              <div class="demo-row">
+                <span class="demo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                <div>
+                  <div class="demo-name">Estimate delivered</div>
+                  <div class="demo-meta">Roof replacement, same day</div>
+                </div>
+                <span class="demo-time">Day 0</span>
+              </div>
+              <div class="demo-steps">
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Quote drafted and sent same day</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Followed up on day 2 and day 5</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unsold quote reactivated</div>
+              </div>
+            </div>
+            <div class="demo-foot">
+              <div><span class="demo-fig">Day 0</span><span class="demo-fcap">estimate drafted and delivered</span></div>
+              <div><span class="demo-fig">0</span><span class="demo-fcap">unsold quotes left to go cold</span></div>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="dp-reviews" role="tabpanel" aria-labelledby="dt-reviews" hidden>
+            <div class="demo-call">
+              <div class="demo-row">
+                <span class="demo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+                <div>
+                  <div class="demo-name">Review requested</div>
+                  <div class="demo-meta">Job marked complete</div>
+                </div>
+                <span class="demo-time">5.0</span>
+              </div>
+              <div class="demo-steps">
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Request sent the moment the job closed</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Five-star review posted</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Reply published in your voice</div>
+              </div>
+            </div>
+            <div class="demo-foot">
+              <div><span class="demo-fig">100%</span><span class="demo-fcap">of finished jobs asked for a review</span></div>
+              <div><span class="demo-fig">0</span><span class="demo-fcap">reviews left without a reply</span></div>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="dp-sync" role="tabpanel" aria-labelledby="dt-sync" hidden>
+            <div class="demo-call">
+              <div class="demo-row">
+                <span class="demo-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
+                <div>
+                  <div class="demo-name">Lead synced</div>
+                  <div class="demo-meta">AccuLynx, assigned to a rep</div>
+                </div>
+                <span class="demo-time">0:00</span>
+              </div>
+              <div class="demo-steps">
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Call transcript written to the CRM</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Routed to the right rep</div>
+                <div class="demo-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Pipeline updated, no double entry</div>
+              </div>
+            </div>
+            <div class="demo-foot">
+              <div><span class="demo-fig">100%</span><span class="demo-fcap">of real calls logged to the CRM</span></div>
+              <div><span class="demo-fig">0</span><span class="demo-fcap">leads typed by hand</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ THE LEAK (dark band - the early split) ============ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="eyebrow">The leak</span>
+        <h2>The lead you missed at 6 PM didn't wait for a callback<span class="period">.</span></h2>
+        <p class="dek">The leak is almost never marketing. It is what happens to the work after it comes in: missed calls, slow quotes, no follow-up, no reviews, double entry between tools, no clear numbers.</p>
+      </div>
+      <div class="leak-figs reveal">
+        <div class="fig">
+          <div class="leak-fn">62%</div>
+          <div class="leak-ft">of calls to home-services go unanswered at peak hours</div>
+        </div>
+        <div class="fig">
+          <div class="leak-fn">85%</div>
+          <div class="leak-ft">of callers who reach voicemail never ring back, they call the next name on the list</div>
+        </div>
+        <div class="fig">
+          <div class="leak-fn">$54k</div>
+          <div class="leak-ft">a year, gone, at just 20 missed calls a month</div>
+        </div>
+      </div>
+      <p class="leak-note reveal">Run the math on your own business and it usually stops the conversation. <b>Then we build the fix.</b></p>
+    </div>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>Find the leak, build the fix, prove it in dollars<span class="period">.</span></h2>
+      </div>
+      <div class="method">
+        <div class="step reveal">
+          <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+          <div class="step-t">We find the leak.</div>
+          <div class="step-b">A free audit walks your whole operation and finds where you are actually losing money. Not a guess, a diagnosis.</div>
+        </div>
+        <div class="step reveal reveal-d1">
+          <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+          <div class="step-t">We build the fix.</div>
+          <div class="step-b">From a proven toolkit, scoped to what you actually need, not a bloated package you don't.</div>
+        </div>
+        <div class="step reveal reveal-d2">
+          <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          <div class="step-t">We run it and prove it.</div>
+          <div class="step-b">Managed end to end, with a clear scorecard every month showing what it caught in dollars.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROOF (dark block) ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="proof reveal">
+        <div class="proof-in">
+          <span class="eyebrow">By the numbers</span>
+          <p class="proof-lead">Built and run in-house, handling <b>thousands of real calls</b> right now. One senior team, end to end, proving it in dollars every month.</p>
+          <div class="proof-grid">
+            <div><div class="proof-n">636</div><div class="proof-t">calls answered for one client in a single month, real buyers routed in seconds</div></div>
+            <div><div class="proof-n">100<i>%</i></div><div class="proof-t">of call transfers connected, zero dropped, on a demanding multi-line system</div></div>
+            <div><div class="proof-n">8</div><div class="proof-t">home-services businesses running on the system right now, each on its own live feed</div></div>
+            <div><div class="proof-n">0</div><div class="proof-t">leads typed by hand, the call ends and the job is already in the CRM</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="eyebrow">What we build</span>
+        <h2>A full toolkit, scoped to your leak<span class="period">.</span></h2>
+        <p class="dek">Mix and match the parts you need. The free audit composes the right system for your business, never a bloated package.</p>
+      </div>
+      <div class="caps reveal">
+        <div class="cap">
+          <div class="cap-head"><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.86.7 2.73a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.35-1.35a2 2 0 0 1 2.11-.45c.87.34 1.79.57 2.73.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="cap-t">Answer and capture</span></div>
+          <ul class="cap-list"><li>24/7 AI receptionist</li><li>After-hours and overflow cover</li><li>Missed-call text-back</li><li>Web and form lead capture</li></ul>
+        </div>
+        <div class="cap">
+          <div class="cap-head"><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><span class="cap-t">Chase and book</span></div>
+          <ul class="cap-list"><li>Speed-to-lead callbacks</li><li>Appointment setting and qualifying</li><li>Multi-step follow-up and nurture</li><li>Dead-database reactivation</li></ul>
+        </div>
+        <div class="cap">
+          <div class="cap-head"><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="cap-t">Quote and close</span></div>
+          <ul class="cap-list"><li>Quoting and estimating agents</li><li>Same-day estimate delivery</li><li>Unsold-quote follow-up</li><li>AI proposal generation</li></ul>
+        </div>
+        <div class="cap">
+          <div class="cap-head"><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="cap-t">Reviews and repeat</span></div>
+          <ul class="cap-list"><li>Review and reputation requests</li><li>AI review responses</li><li>Post-job win-back</li><li>Maintenance and membership renewals</li></ul>
+        </div>
+        <div class="cap">
+          <div class="cap-head"><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span><span class="cap-t">The integration layer</span></div>
+          <ul class="cap-list"><li>Deep CRM and tool-to-tool wiring</li><li>Lead routing and distribution</li><li>Pipeline automation and CRM hygiene</li><li>Call transcription to the CRM</li></ul>
+        </div>
+        <div class="cap">
+          <div class="cap-head"><span class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span><span class="cap-t">Back-office AI</span></div>
+          <ul class="cap-list"><li>Internal knowledge assistant</li><li>AI inbox and email replies</li><li>Document and proposal drafting</li><li>Call-QA coaching scorecard</li></ul>
+        </div>
+      </div>
+      <div class="caps-foot reveal">
+        <p class="caps-note"><b>A free audit composes the right system for your business</b>, scoped to the leak that is actually costing you.</p>
+        <a class="arrow-link" href="book.html">Book the audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="eyebrow">What it costs</span>
+        <h2>Builds typically run $3,500 to $15,000+, scoped to the leak<span class="period">.</span></h2>
+      </div>
+      <div class="price-grid">
+        <div class="price reveal">
+          <span class="price-role">The fastest win</span>
+          <span class="price-name">Missed-call rescue</span>
+          <div class="price-amt"><span class="n">~$4,250</span><span class="mo">+ $500 / mo</span></div>
+          <div class="price-hr"></div>
+          <p class="price-sc">Speed-to-lead, missed-call text-back, and CRM sync so no lead ever goes cold.</p>
+          <div class="price-go"><a class="btn btn-secondary btn-md" href="book.html">Start with a free audit</a></div>
+        </div>
+        <div class="price price--f reveal reveal-d1">
+          <span class="price-flag">A common shape</span>
+          <span class="price-role">The full front office</span>
+          <span class="price-name">Front-office build</span>
+          <div class="price-amt"><span class="n">~$11,000</span><span class="mo">+ $750 / mo</span></div>
+          <div class="price-hr"></div>
+          <p class="price-sc">A 24/7 inbound receptionist plus nurture and follow-up that turns leads into booked jobs.</p>
+          <div class="price-go"><a class="btn btn-primary btn-md" href="book.html">Start with a free audit</a></div>
+        </div>
+        <div class="price reveal reveal-d2">
+          <span class="price-role">The big build</span>
+          <span class="price-name">Revenue weapon</span>
+          <div class="price-amt"><span class="n">$12-17k</span><span class="mo">+ $1,000 / mo</span></div>
+          <div class="price-hr"></div>
+          <p class="price-sc">Quoting and internal tools, deep integrations, and a live dashboard of the whole operation.</p>
+          <div class="price-go"><a class="btn btn-secondary btn-md" href="book.html">Start with a free audit</a></div>
+        </div>
+      </div>
+      <p class="price-cap reveal">These are examples of builds we've scoped, not packages to pick from. <b>The free audit prescribes the right system for your business</b> and prices it item by item, scoped to the leak that is actually costing you. 100% upfront, month to month, cancel anytime.</p>
+    </div>
+  </section>
+
+  <!-- ============ PATH + GUARANTEE ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="eyebrow">The path</span>
+        <h2>You see it work before you pay a dollar<span class="period">.</span></h2>
+      </div>
+      <div class="path-grid">
+        <ol class="steps reveal">
+          <li><span><b>Free demo.</b> We build it on your own business first, so you watch it work before you pay a dollar.</span></li>
+          <li><span><b>Free audit.</b> We find every leak and put a dollar number on each one.</span></li>
+          <li><span><b>We build it.</b> Scoped to what you actually need, paid upfront, launch-guaranteed.</span></li>
+          <li><span><b>Monthly scorecard.</b> You see the ROI every month, and we keep tuning it.</span></li>
+        </ol>
+        <div class="guarantee reveal reveal-d1">
+          <div class="guarantee-head">
+            <span class="guarantee-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <span class="guarantee-t">30-day launch guarantee</span>
+          </div>
+          <p class="guarantee-b">Live and working as scoped within 30 days or your setup back, and we keep tuning it free through day 30. <b>The risk is ours, not yours.</b></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="eyebrow">Straight answers</span>
+        <h2>Questions owners ask<span class="period">.</span></h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>I already have a receptionist or office person.<span class="pl"></span></summary>
+          <div class="ans">They can't answer at 7pm or while already on another line. The system catches the 40 to 60 percent that slip past a human, and hands your office person clean, logged leads instead of replacing them.</div>
+        </details>
+        <details>
+          <summary>Will it sound robotic, or annoy my customers?<span class="pl"></span></summary>
+          <div class="ans">It uses a natural voice and it is trained on your business. Call the live demo and judge for yourself. That is exactly why we build it first.</div>
+        </details>
+        <details>
+          <summary>I'm not technical. I don't want to manage software.<span class="pl"></span></summary>
+          <div class="ans">You don't. It is fully managed. We build it, run it, monitor it, and report on it. You never touch the backend.</div>
+        </details>
+        <details>
+          <summary>What about my CRM? I use AccuLynx, ServiceTitan, Jobber, GHL.<span class="pl"></span></summary>
+          <div class="ans">That is exactly our edge. We wire into the CRM you already use, the part most point tools can't reach. Your data stays in your CRM, always yours.</div>
+        </details>
+        <details>
+          <summary>Why is the setup paid upfront?<span class="pl"></span></summary>
+          <div class="ans">The setup builds a custom system end to end, and it is backed by the launch guarantee: live and working in 30 days or your money back. You are not betting on us.</div>
+        </details>
+        <details>
+          <summary>What if it doesn't work?<span class="pl"></span></summary>
+          <div class="ans">If it is not live and working as scoped in 30 days, you get your setup back. After that, the monthly scorecard shows you exactly what it is catching.</div>
+        </details>
+        <details>
+          <summary>Can I cancel?<span class="pl"></span></summary>
+          <div class="ans">Month to month, cancel anytime. The scorecard is what keeps clients, not a contract.</div>
+        </details>
+        <details>
+          <summary>What happens to it if I leave?<span class="pl"></span></summary>
+          <div class="ans">Your CRM, leads, data, and phone number are yours and stay. The managed engine switches off. Nothing you owned goes away.</div>
+        </details>
+        <details>
+          <summary>How big are you? Who actually does the work?<span class="pl"></span></summary>
+          <div class="ans">Intentionally small and senior. You work directly with the team that builds your system, plus a vetted specialist bench when a project needs it.</div>
+        </details>
+        <details>
+          <summary>Can I talk to a client you've done this for?<span class="pl"></span></summary>
+          <div class="ans">We keep our clients' info private, so we don't hand their numbers around. Instead you get something better: a free working demo built on your own business before you pay a dollar, plus a portfolio of live builds and their results. You judge it on your own data.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSE ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta reveal">
+        <div class="cta-in">
+          <h2 class="cta-t">See it built on your own business first<span style="color:var(--stone-900)">.</span></h2>
+          <p class="cta-s">A free working demo on your own business, then a free audit that puts a dollar number on every leak. No pressure, no contract.</p>
+          <div class="cta-btn"><a class="btn btn-dark btn-lg" href="book.html">Book a call</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-in">
+    <span class="gk-wordmark" style="font-size:19px">Gordakey<i></i></span>
+    <div class="footer-contact"><a href="mailto:hello@gordakey.com">hello@gordakey.com</a><span class="sep">/</span>gordakey.com</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document;
+  var nav=d.querySelector('.nav');
+  function onScroll(){ if(nav) nav.setAttribute('data-scrolled',(window.pageYOffset||0)>8?'true':'false'); }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var els=[].slice.call(d.querySelectorAll('.reveal'));
+  function revealAll(){ els.forEach(function(el){ el.classList.add('is-in'); }); }
+  var rm=false; try{ rm=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  if(rm || !('IntersectionObserver' in window)){ revealAll(); return; }
+  try{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -10% 0px',threshold:0.12});
+    els.forEach(function(el){ io.observe(el); });
+  }catch(e){ revealAll(); }
+})();
+
+/* hero demo: system switcher tabs + auto-cycle */
+(function(){
+  var demo=document.querySelector('.demo'); if(!demo) return;
+  var tabs=[].slice.call(demo.querySelectorAll('.demo-tab'));
+  var label=demo.querySelector('#demo-label');
+  var current=0;
+  function activate(tab){
+    current=tabs.indexOf(tab);
+    tabs.forEach(function(t){
+      var on=t===tab;
+      t.classList.toggle('is-active',on);
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      var p=document.getElementById('dp-'+t.getAttribute('data-tab'));
+      if(p) p.hidden=!on;
+    });
+    if(label) label.textContent=tab.getAttribute('data-label');
+  }
+  /* auto-cycle: advance every 2.8s; pause while hovered or focused,
+     stop for good once the visitor picks a tab themselves */
+  var timer=null,paused=false;
+  var rm=false; try{ rm=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  function stopCycle(){ if(timer){ clearInterval(timer); timer=null; } }
+  if(!rm){
+    timer=setInterval(function(){
+      if(paused||document.hidden) return;
+      activate(tabs[(current+1)%tabs.length]);
+    },2800);
+    demo.addEventListener('mouseenter',function(){ paused=true; });
+    demo.addEventListener('mouseleave',function(){ paused=false; });
+    demo.addEventListener('focusin',function(){ paused=true; });
+    demo.addEventListener('focusout',function(){ paused=false; });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){ stopCycle(); activate(t); });
+    t.addEventListener('keydown',function(e){
+      var d=e.key==='ArrowRight'?1:(e.key==='ArrowLeft'?-1:0); if(!d) return;
+      e.preventDefault(); stopCycle(); var n=(i+d+tabs.length)%tabs.length; tabs[n].focus(); activate(tabs[n]);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

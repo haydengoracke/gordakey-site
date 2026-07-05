@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
+<meta name="theme-color" content="#EFEBE2">
+<link rel="canonical" href="https://gordakey.com/book.html">
+<title>Gordakey. - Book a call</title>
+<meta name="description" content="Book a free 20-minute call. We find what your business is leaking and put a dollar number on it. Free audit, plus a free demo built on your own business.">
+<meta property="og:title" content="Gordakey. - Book a call">
+<meta property="og:description" content="A free 20-minute call. No pitch, no pressure. You leave with the diagnosis whether or not we ever work together.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gordakey.com/book.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://gordakey.com/og-image.png">
+<meta name="twitter:image" content="https://gordakey.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   GORDAKEY - design-system tokens (warm Stone ramp + one caramel).
+   Light default. Self-contained. The period is the signature.
+   ============================================================ */
+:root{
+  --stone-000:#FCFBF8; --stone-025:#F4F0E8; --stone-050:#EFEBE2; --stone-100:#E9E3D8;
+  --stone-200:#D8D0C0; --stone-300:#BDB4A2; --stone-400:#A89E8C; --stone-500:#8A8276;
+  --stone-600:#6E675C; --stone-700:#4A463F; --stone-800:#2E2A24; --stone-900:#1B1A18; --stone-999:#100F0D;
+  --caramel-300:#E3C39B; --caramel-400:#D9AE78; --caramel-500:#CF9457; --caramel-600:#BC7F45;
+  --caramel-700:#A86E34; --caramel-800:#855424; --caramel-900:#5E3A18;
+  --canvas:var(--stone-050); --surface:var(--stone-000); --surface-inset:var(--stone-025); --surface-contrast:var(--stone-900);
+  --border:#E4DDD0; --border-strong:var(--stone-200); --hairline:#ECE6DA;
+  --text:var(--stone-900); --text-body:var(--stone-700); --text-muted:var(--stone-600); --text-faint:var(--stone-500);
+  --text-on-contrast:var(--stone-100); --text-on-accent:#1B1410;
+  --accent:var(--caramel-500); --accent-hover:var(--caramel-600); --accent-text:var(--caramel-700); --accent-emphasis:var(--caramel-800);
+  --focus-ring:rgba(207,148,87,.20);
+  --font-display:'Outfit',system-ui,sans-serif;
+  --font-body:'Hanken Grotesk',system-ui,sans-serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+  --radius-sm:6px; --radius-md:9px; --radius-lg:14px; --radius-xl:24px; --radius-full:9999px;
+  --shadow-e1:0 1px 2px rgba(75,58,34,.06);
+  --shadow-e2:0 10px 28px -12px rgba(75,58,34,.20);
+  --shadow-e3:0 28px 60px -22px rgba(75,58,34,.30);
+  --shadow-accent:0 14px 32px -14px rgba(207,148,87,.55);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --maxw:1160px;
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--canvas);color:var(--text-body);
+  font-family:var(--font-body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+main{display:block;}
+a{color:inherit;text-decoration:none;}
+b,strong{font-weight:600;color:var(--text);}
+p{text-wrap:pretty;}
+img,svg{display:block;}
+::selection{background:rgba(207,148,87,.26);}
+
+/* ---------- wordmark ---------- */
+.gk-wordmark{font-family:var(--font-display);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--text);display:inline-flex;align-items:flex-end;}
+.gk-wordmark>i{width:.2em;height:.2em;border-radius:50%;background:var(--accent);display:inline-block;margin-left:.07em;margin-bottom:.05em;}
+
+/* ---------- buttons ---------- */
+.btn{font-family:var(--font-display);font-weight:600;line-height:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  cursor:pointer;text-decoration:none;border:1px solid transparent;white-space:nowrap;-webkit-font-smoothing:antialiased;
+  transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease),transform .12s var(--ease),box-shadow .18s var(--ease);}
+.btn:active{transform:translateY(1px);}
+.btn-sm{padding:9px 17px;font-size:13.5px;border-radius:var(--radius-md);}
+.btn-md{padding:13px 24px;font-size:15px;border-radius:var(--radius-md);}
+.btn-lg{padding:16px 30px;font-size:16px;border-radius:var(--radius-md);}
+.btn-primary{background:var(--accent);color:var(--text-on-accent);box-shadow:var(--shadow-accent);}
+.btn-primary:hover{background:var(--accent-hover);}
+.btn-secondary{background:var(--surface);color:var(--text);border-color:var(--border-strong);}
+.btn-secondary:hover{border-color:var(--text);}
+.btn svg{width:1em;height:1em;}
+
+/* ---------- layout primitives ---------- */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+.section{padding:64px 0;}
+.section--tight{padding:48px 0;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent-text);}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;}
+.shead{max-width:680px;margin-bottom:36px;}
+.shead h2{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,4vw,46px);
+  letter-spacing:-1.6px;line-height:1.06;color:var(--text);margin:18px 0 0;text-wrap:balance;}
+.shead .dek{font-size:18px;line-height:1.6;color:var(--text-muted);margin:16px 0 0;max-width:62ch;}
+.period{color:var(--accent);}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--canvas) 84%,transparent);
+  backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);
+  border-bottom:1px solid transparent;transition:border-color .2s ease,box-shadow .2s ease;}
+.nav[data-scrolled="true"]{border-bottom-color:var(--border);box-shadow:0 8px 24px -16px rgba(75,58,34,.28);}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:16px 32px;display:flex;align-items:center;gap:24px;}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:26px;}
+.nav-link{position:relative;font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--text-body);transition:color .15s ease;}
+.nav-link:hover{color:var(--text);}
+.nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .22s var(--ease);}
+.nav-link:hover::after{transform:scaleX(1);}
+
+/* ============ INTERIOR HERO ============ */
+.hero-page{position:relative;overflow:hidden;padding:68px 0 12px;}
+.hero-page::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(1100px 620px at 88% -12%,rgba(207,148,87,.16),transparent 56%);}
+.hero-page::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(133,84,36,.05) 1px,transparent 1.6px);background-size:30px 30px;
+  -webkit-mask-image:radial-gradient(840px 520px at 25% 18%,#000,transparent 75%);mask-image:radial-gradient(840px 520px at 25% 18%,#000,transparent 75%);}
+.hero-page>.container{position:relative;z-index:1;}
+.hero-page h1{font-family:var(--font-display);font-weight:800;font-size:clamp(40px,5.6vw,68px);
+  letter-spacing:-2.6px;line-height:1.0;color:var(--text);margin:22px 0 0;max-width:19ch;text-wrap:balance;}
+.hero-page .lead{font-size:19px;line-height:1.6;color:var(--text-body);max-width:62ch;margin:22px 0 0;}
+.hero-page .lead b{color:var(--text);}
+
+/* ============ DARK BAND (the early split) ============ */
+.section--dark{position:relative;overflow:hidden;background:var(--surface-contrast);color:var(--text-on-contrast);padding:80px 0;}
+.section--dark::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(207,148,87,.13) 1.1px,transparent 1.5px);background-size:28px 28px;opacity:.5;}
+.section--dark::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(960px 540px at 85% -12%,rgba(207,148,87,.16),transparent 58%);}
+.section--dark>.container{position:relative;z-index:1;}
+.section--dark .eyebrow{color:var(--caramel-400);}
+.section--dark .shead h2{color:#F4EFE6;}
+
+/* aggregate stat grid (dark) */
+.agg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 28px;border-top:1px solid rgba(255,255,255,.12);margin-top:4px;padding-top:40px;}
+.agg-n{font-family:var(--font-display);font-weight:700;font-size:clamp(36px,4vw,50px);letter-spacing:-2px;line-height:1;color:#F4EFE6;font-variant-numeric:tabular-nums;}
+.agg-u{display:block;font-family:var(--font-display);font-weight:600;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--caramel-400);margin-top:13px;}
+.agg-t{font-size:13.5px;line-height:1.5;color:var(--stone-400);margin-top:7px;max-width:230px;}
+
+/* ============ NUMBERED STEPS ============ */
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;max-width:840px;}
+.steps li{counter-increment:s;display:flex;gap:18px;padding:18px 0;font-size:16.5px;line-height:1.58;color:var(--text-body);border-top:1px solid var(--border);}
+.steps li:first-child{border-top:none;padding-top:0;}
+.steps li::before{content:counter(s);flex:none;width:36px;height:36px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-e1);color:var(--accent-text);
+  font-family:var(--font-display);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;}
+.steps b{font-family:var(--font-display);font-weight:600;color:var(--text);}
+
+/* ============ SCHEDULE: SLOT + FORM ============ */
+.slot{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;max-width:860px;
+  background:var(--surface);border:1px dashed var(--accent);border-radius:var(--radius-lg);padding:42px 28px;box-shadow:var(--shadow-e1);}
+.slot-ic{color:var(--accent-text);}
+.slot-ic svg{width:26px;height:26px;}
+.slot-t{font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent-text);}
+.slot-d{font-size:15px;color:var(--text-muted);}
+.slot code{font-family:var(--font-mono);font-size:12px;color:var(--text-body);background:var(--surface-inset);border:1px solid var(--border);border-radius:var(--radius-sm);padding:4px 9px;}
+.or{display:flex;align-items:center;gap:16px;margin:34px 0 28px;max-width:860px;
+  font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-faint);}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--border);}
+.form-card{max-width:860px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-e2);padding:30px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.field{display:flex;flex-direction:column;}
+.field label{font-family:var(--font-body);font-weight:500;font-size:13px;color:var(--text);margin-bottom:7px;}
+.field input,.field select,.field textarea{width:100%;background:var(--surface-inset);border:1px solid var(--border-strong);border-radius:var(--radius-sm);
+  padding:12px 14px;font-family:var(--font-body);font-size:14.5px;color:var(--text);outline:none;
+  transition:border-color .15s ease,box-shadow .15s ease,background .15s ease;}
+.field textarea{min-height:106px;resize:vertical;}
+.field input::placeholder,.field textarea::placeholder{color:var(--text-faint);}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);background:var(--surface);box-shadow:0 0 0 3px var(--focus-ring);}
+.field select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:40px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A86E34' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat:no-repeat;background-position:right 14px center;}
+.mb16{margin-bottom:16px;}
+.mb20{margin-bottom:20px;}
+.form-note{font-size:12.5px;color:var(--text-muted);margin:14px 0 0;}
+.form-success{display:flex;gap:14px;align-items:flex-start;background:var(--surface-contrast);border-radius:var(--radius-md);padding:22px 24px;box-shadow:var(--shadow-e3);}
+.form-success svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:1px;}
+.form-success .t{font-family:var(--font-display);font-weight:600;font-size:16px;color:#F4EFE6;}
+.form-success .b{font-size:14px;line-height:1.55;color:var(--stone-300);margin-top:4px;}
+[hidden]{display:none !important;}
+
+/* ============ FOOTER ============ */
+.footer{border-top:1px solid var(--border);background:var(--surface);}
+.footer-in{max-width:var(--maxw);margin:0 auto;padding:34px 32px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;}
+.footer-contact{font-family:var(--font-mono);font-size:12.5px;color:var(--text-muted);}
+.footer-contact a{color:var(--accent-text);}
+.footer-contact .sep{opacity:.5;margin:0 4px;}
+
+/* ============ skip link + focus ============ */
+.skip{position:absolute;left:16px;top:-56px;z-index:100;background:var(--surface);color:var(--text);border:1px solid var(--border-strong);
+  border-radius:var(--radius-sm);padding:10px 16px;font-family:var(--font-display);font-weight:600;font-size:13px;transition:top .18s ease;}
+.skip:focus{top:16px;}
+#main:focus{outline:none;}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--radius-sm);}
+
+/* ============ motion / reveal ============ */
+html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+html.js .reveal.is-in{opacity:1;transform:none;}
+
+/* ============ responsive ============ */
+@media(max-width:880px){
+  .agg-grid{grid-template-columns:1fr 1fr;gap:30px 24px;}
+}
+@media(max-width:760px){
+  .section{padding:52px 0;}
+  .section--tight{padding:40px 0;}
+  .section--dark{padding:60px 0;}
+}
+@media(max-width:600px){
+  .form-row{grid-template-columns:1fr;}
+}
+@media(max-width:520px){
+  .container,.nav-in,.footer-in{padding-left:20px;padding-right:20px;}
+  .nav-link.hide-sm{display:none;}
+  .agg-grid{grid-template-columns:1fr;}
+  .form-card{padding:24px;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  html.js .reveal{opacity:1 !important;transform:none !important;}
+  *{transition:none !important;animation:none !important;}
+}
+@media print{
+  .nav,.skip{display:none;}
+  html.js .reveal{opacity:1 !important;transform:none !important;}
+  .form-card,.slot{box-shadow:none !important;}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Gordakey","url":"https://gordakey.com","email":"hello@gordakey.com","description":"Gordakey builds and runs the lead, booking, and follow-up systems that grow home-services businesses. Built, managed, proven.","slogan":"Growth systems for service businesses."}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a href="/" aria-label="Gordakey home" style="display:inline-flex"><span class="gk-wordmark" style="font-size:23px">Gordakey<i></i></span></a>
+    <div class="nav-links">
+      <a class="nav-link hide-sm" href="proof.html">Proof</a>
+      <a class="nav-link hide-sm" href="/#pricing">Pricing</a>
+      <a class="btn btn-primary btn-sm" href="book.html" aria-current="page">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero-page">
+    <div class="container">
+      <span class="eyebrow">Book a call</span>
+      <h1>Let's find what your business is leaking<span class="period">.</span></h1>
+      <p class="lead">A free 20-minute call. No pitch, no pressure. We walk your operation, find where you are losing time, money, and customers, and put a real dollar number on the biggest leak. <b>You leave with the diagnosis whether or not we ever work together.</b></p>
+    </div>
+  </header>
+
+  <!-- ============ WHAT IT COSTS YOU (dark band) ============ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="shead reveal" style="margin-bottom:8px">
+        <span class="eyebrow">What it costs you</span>
+        <h2>Twenty minutes, zero dollars<span class="period">.</span></h2>
+      </div>
+      <div class="agg-grid reveal">
+        <div><div class="agg-n">20 min</div><span class="agg-u">The call</span><div class="agg-t">you tell us how the work comes in and where it sticks</div></div>
+        <div><div class="agg-n">$0</div><span class="agg-u">The audit</span><div class="agg-t">a real dollar number on every leak we find</div></div>
+        <div><div class="agg-n">$0</div><span class="agg-u">The demo</span><div class="agg-t">built on your own business before you pay a dollar</div></div>
+        <div><div class="agg-n">1 day</div><span class="agg-u">Reply</span><div class="agg-t">we get back to you within one business day</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT HAPPENS ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="eyebrow">What happens</span>
+        <h2>No pitch, no pressure<span class="period">.</span></h2>
+      </div>
+      <ol class="steps reveal">
+        <li><span><b>The call.</b> 20 minutes. You tell us how the work comes in and where it gets stuck. We ask the questions that surface the leaks.</span></li>
+        <li><span><b>The free demo.</b> We build the system on your own business, so you watch it work before you pay a dollar.</span></li>
+        <li><span><b>The free audit.</b> We map your whole operation and quantify what each leak is costing you. Not a guess, a diagnosis. Then we prescribe the system that fixes the biggest one.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PICK A TIME ============ -->
+  <section class="section section--tight" id="schedule">
+    <div class="container">
+      <div class="shead reveal">
+        <span class="eyebrow">Pick a time</span>
+        <h2>Grab a slot, or send the details<span class="period">.</span></h2>
+      </div>
+
+      <!-- GHL CALENDAR EMBED SLOT: replace this block with the GHL calendar embed -->
+      <div class="slot reveal">
+        <span class="slot-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+        <div class="slot-t">Booking calendar</div>
+        <div class="slot-d">Your scheduling calendar goes here.</div>
+        <code>Replace this block with the GHL calendar embed.</code>
+      </div>
+
+      <div class="or reveal">or send the details</div>
+
+      <!-- GHL FORM SLOT: wire these fields to a native GHL form -> Gordakey CRM + notify hello@ -->
+      <div class="form-card reveal">
+        <form id="audit-form" name="audit-request" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" placeholder="First and last"></div>
+            <div class="field"><label for="f-business">Business name</label><input id="f-business" name="business" placeholder="Company"></div>
+          </div>
+          <div class="field mb16">
+            <label for="f-trade">Trade</label>
+            <select id="f-trade" name="trade">
+              <option value="" disabled selected>Select your trade</option>
+              <option>Roofing</option>
+              <option>Landscaping / hardscape</option>
+              <option>HVAC</option>
+              <option>Plumbing</option>
+              <option>Electrical</option>
+              <option>Auto / repair shop</option>
+              <option>Home building / remodeling</option>
+              <option>Other service business</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-volume">Calls and leads in a typical month</label>
+              <select id="f-volume" name="monthly_volume">
+                <option value="" disabled selected>Roughly how many</option>
+                <option>Under 50</option>
+                <option>50 to 150</option>
+                <option>150 to 400</option>
+                <option>400+</option>
+                <option>Honestly not sure</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-crm">CRM or job software you run</label>
+              <input id="f-crm" name="crm" placeholder="AccuLynx, ServiceTitan, Jobber, GHL, none...">
+            </div>
+          </div>
+          <div class="field mb16">
+            <label for="f-bottleneck">What is the biggest bottleneck right now</label>
+            <textarea id="f-bottleneck" name="bottleneck" placeholder="Missed calls, slow quotes, no follow-up, leads slipping, tools that don't talk to each other"></textarea>
+          </div>
+          <div class="form-row mb20">
+            <div class="field"><label for="f-email">Best email</label><input id="f-email" name="email" type="email" placeholder="you@company.com"></div>
+            <div class="field"><label for="f-phone">Best phone</label><input id="f-phone" name="phone" type="tel" placeholder="(704) 000-0000"></div>
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit">Send and get my audit</button>
+          <p class="form-note">We reply within one business day. Your details are used only to prepare your audit.</p>
+        </form>
+        <div class="form-success" id="form-success" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <div class="t">Got it, your audit is on the way.</div>
+            <div class="b">We reply within one business day with next steps. Check your inbox.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-in">
+    <span class="gk-wordmark" style="font-size:19px">Gordakey<i></i></span>
+    <div class="footer-contact"><a href="mailto:hello@gordakey.com">hello@gordakey.com</a><span class="sep">/</span>gordakey.com</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document;
+  var nav=d.querySelector('.nav');
+  function onScroll(){ if(nav) nav.setAttribute('data-scrolled',(window.pageYOffset||0)>8?'true':'false'); }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var form=d.getElementById('audit-form');
+  if(form){ form.addEventListener('submit',function(ev){ ev.preventDefault();
+    form.hidden=true; var s=d.getElementById('form-success'); if(s){ s.hidden=false; s.scrollIntoView({behavior:'smooth',block:'center'}); }
+  }); }
+
+  var els=[].slice.call(d.querySelectorAll('.reveal'));
+  function revealAll(){ els.forEach(function(el){ el.classList.add('is-in'); }); }
+  var rm=false; try{ rm=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  if(rm || !('IntersectionObserver' in window)){ revealAll(); return; }
+  try{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -10% 0px',threshold:0.12});
+    els.forEach(function(el){ io.observe(el); });
+  }catch(e){ revealAll(); }
+})();
+</script>
+
+</body>
+</html>

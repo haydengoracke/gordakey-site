@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
+<meta name="theme-color" content="#EFEBE2">
+<link rel="canonical" href="https://gordakey.com/proof.html">
+<title>Gordakey. - Proof, real systems in real businesses</title>
+<meta name="description" content="Live case studies from Gordakey: AI receptionists, speed-to-lead, and deep CRM integrations running in roofing, landscaping, and home-building businesses right now.">
+<meta property="og:title" content="Gordakey. - Proof, real systems in real businesses">
+<meta property="og:description" content="Every build is live in a service business right now. The numbers are real and the work is ours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gordakey.com/proof.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://gordakey.com/og-image.png">
+<meta name="twitter:image" content="https://gordakey.com/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   GORDAKEY - design-system tokens (warm Stone ramp + one caramel).
+   Light default. Self-contained. The period is the signature.
+   ============================================================ */
+:root{
+  --stone-000:#FCFBF8; --stone-025:#F4F0E8; --stone-050:#EFEBE2; --stone-100:#E9E3D8;
+  --stone-200:#D8D0C0; --stone-300:#BDB4A2; --stone-400:#A89E8C; --stone-500:#8A8276;
+  --stone-600:#6E675C; --stone-700:#4A463F; --stone-800:#2E2A24; --stone-900:#1B1A18; --stone-999:#100F0D;
+  --caramel-300:#E3C39B; --caramel-400:#D9AE78; --caramel-500:#CF9457; --caramel-600:#BC7F45;
+  --caramel-700:#A86E34; --caramel-800:#855424; --caramel-900:#5E3A18;
+  --canvas:var(--stone-050); --surface:var(--stone-000); --surface-inset:var(--stone-025); --surface-contrast:var(--stone-900);
+  --border:#E4DDD0; --border-strong:var(--stone-200); --hairline:#ECE6DA;
+  --text:var(--stone-900); --text-body:var(--stone-700); --text-muted:var(--stone-600); --text-faint:var(--stone-500);
+  --text-on-contrast:var(--stone-100); --text-on-accent:#1B1410;
+  --accent:var(--caramel-500); --accent-hover:var(--caramel-600); --accent-text:var(--caramel-700); --accent-emphasis:var(--caramel-800);
+  --focus-ring:rgba(207,148,87,.20);
+  --font-display:'Outfit',system-ui,sans-serif;
+  --font-body:'Hanken Grotesk',system-ui,sans-serif;
+  --font-mono:'Space Mono',ui-monospace,monospace;
+  --radius-sm:6px; --radius-md:9px; --radius-lg:14px; --radius-xl:24px; --radius-full:9999px;
+  --shadow-e1:0 1px 2px rgba(75,58,34,.06);
+  --shadow-e2:0 10px 28px -12px rgba(75,58,34,.20);
+  --shadow-e3:0 28px 60px -22px rgba(75,58,34,.30);
+  --shadow-accent:0 14px 32px -14px rgba(207,148,87,.55);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --maxw:1160px;
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;background:var(--canvas);color:var(--text-body);
+  font-family:var(--font-body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+main{display:block;}
+a{color:inherit;text-decoration:none;}
+b,strong{font-weight:600;color:var(--text);}
+p{text-wrap:pretty;}
+img,svg{display:block;}
+::selection{background:rgba(207,148,87,.26);}
+
+/* ---------- wordmark ---------- */
+.gk-wordmark{font-family:var(--font-display);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--text);display:inline-flex;align-items:flex-end;}
+.gk-wordmark>i{width:.2em;height:.2em;border-radius:50%;background:var(--accent);display:inline-block;margin-left:.07em;margin-bottom:.05em;}
+
+/* ---------- buttons ---------- */
+.btn{font-family:var(--font-display);font-weight:600;line-height:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  cursor:pointer;text-decoration:none;border:1px solid transparent;white-space:nowrap;-webkit-font-smoothing:antialiased;
+  transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease),transform .12s var(--ease),box-shadow .18s var(--ease);}
+.btn:active{transform:translateY(1px);}
+.btn-sm{padding:9px 17px;font-size:13.5px;border-radius:var(--radius-md);}
+.btn-md{padding:13px 24px;font-size:15px;border-radius:var(--radius-md);}
+.btn-lg{padding:16px 30px;font-size:16px;border-radius:var(--radius-md);}
+.btn-primary{background:var(--accent);color:var(--text-on-accent);box-shadow:var(--shadow-accent);}
+.btn-primary:hover{background:var(--accent-hover);}
+.btn-secondary{background:var(--surface);color:var(--text);border-color:var(--border-strong);}
+.btn-secondary:hover{border-color:var(--text);}
+.btn svg{width:1em;height:1em;}
+
+/* ---------- layout primitives ---------- */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+.section{padding:64px 0;}
+.section--tight{padding:48px 0;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent-text);}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;}
+.shead{max-width:680px;margin-bottom:36px;}
+.shead h2{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,4vw,46px);
+  letter-spacing:-1.6px;line-height:1.06;color:var(--text);margin:18px 0 0;text-wrap:balance;}
+.shead .dek{font-size:18px;line-height:1.6;color:var(--text-muted);margin:16px 0 0;max-width:62ch;}
+.period{color:var(--accent);}
+.arrow-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--accent-text);}
+.arrow-link svg{width:15px;height:15px;transition:transform .18s var(--ease);}
+.arrow-link:hover svg{transform:translateX(4px);}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--canvas) 84%,transparent);
+  backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);
+  border-bottom:1px solid transparent;transition:border-color .2s ease,box-shadow .2s ease;}
+.nav[data-scrolled="true"]{border-bottom-color:var(--border);box-shadow:0 8px 24px -16px rgba(75,58,34,.28);}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:16px 32px;display:flex;align-items:center;gap:24px;}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:26px;}
+.nav-link{position:relative;font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--text-body);transition:color .15s ease;}
+.nav-link:hover{color:var(--text);}
+.nav-link[aria-current="page"]{color:var(--text);}
+.nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .22s var(--ease);}
+.nav-link:hover::after,.nav-link[aria-current="page"]::after{transform:scaleX(1);}
+
+/* ============ INTERIOR HERO ============ */
+.hero-page{position:relative;overflow:hidden;padding:68px 0 12px;}
+.hero-page::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(1100px 620px at 88% -12%,rgba(207,148,87,.16),transparent 56%);}
+.hero-page::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(133,84,36,.05) 1px,transparent 1.6px);background-size:30px 30px;
+  -webkit-mask-image:radial-gradient(840px 520px at 25% 18%,#000,transparent 75%);mask-image:radial-gradient(840px 520px at 25% 18%,#000,transparent 75%);}
+.hero-page>.container{position:relative;z-index:1;}
+.hero-page h1{font-family:var(--font-display);font-weight:800;font-size:clamp(40px,5.6vw,68px);
+  letter-spacing:-2.6px;line-height:1.0;color:var(--text);margin:22px 0 0;max-width:17ch;text-wrap:balance;}
+.hero-page .lead{font-size:19px;line-height:1.6;color:var(--text-body);max-width:60ch;margin:22px 0 0;}
+.hero-page .lead b{color:var(--text);}
+.hero-cta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:30px;}
+
+/* ============ DARK BAND (the early split) ============ */
+.section--dark{position:relative;overflow:hidden;background:var(--surface-contrast);color:var(--text-on-contrast);padding:80px 0;}
+.section--dark::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(207,148,87,.13) 1.1px,transparent 1.5px);background-size:28px 28px;opacity:.5;}
+.section--dark::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(960px 540px at 85% -12%,rgba(207,148,87,.16),transparent 58%);}
+.section--dark>.container{position:relative;z-index:1;}
+.section--dark .eyebrow{color:var(--caramel-400);}
+.section--dark .shead h2{color:#F4EFE6;}
+.section--dark .shead .dek{color:var(--stone-300);}
+
+/* aggregate stat grid (dark) */
+.agg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 28px;border-top:1px solid rgba(255,255,255,.12);margin-top:4px;padding-top:40px;}
+.agg-n{font-family:var(--font-display);font-weight:700;font-size:clamp(38px,4.4vw,54px);letter-spacing:-2px;line-height:1;color:#F4EFE6;font-variant-numeric:tabular-nums;}
+.agg-n i{color:var(--accent);font-style:normal;}
+.agg-u{display:block;font-family:var(--font-display);font-weight:600;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--caramel-400);margin-top:13px;}
+.agg-t{font-size:13.5px;line-height:1.5;color:var(--stone-400);margin-top:7px;max-width:230px;}
+
+/* ============ ALERT (brand: left caramel rule + line icon) ============ */
+.alert{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);
+  border-radius:0 var(--radius-md) var(--radius-md) 0;padding:18px 20px;box-shadow:var(--shadow-e1);max-width:880px;margin-bottom:44px;}
+.alert-ic{flex:none;color:var(--accent-text);margin-top:1px;}
+.alert-ic svg{width:18px;height:18px;}
+.alert-t{font-family:var(--font-display);font-weight:600;font-size:15.5px;color:var(--text);}
+.alert-b{font-size:14px;line-height:1.55;color:var(--text-muted);margin-top:3px;}
+
+/* ============ CASE DOSSIERS ============ */
+.cases{display:flex;flex-direction:column;}
+.case{padding:46px 0;border-top:1px solid var(--border);}
+.case:first-of-type{border-top:none;padding-top:0;}
+.case-top{display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
+.case-ix{font-family:var(--font-mono);font-size:12px;letter-spacing:.5px;color:var(--accent-text);}
+.case-sys{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-muted);}
+.case-rule{flex:1;min-width:24px;height:1px;background:var(--border);}
+.badge{font-family:var(--font-display);font-weight:600;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--accent-text);
+  border:1px solid var(--accent);border-radius:var(--radius-full);padding:5px 13px;white-space:nowrap;}
+.case-h{font-family:var(--font-display);font-weight:700;font-size:clamp(24px,3vw,33px);letter-spacing:-1.1px;line-height:1.1;color:var(--text);margin:0;max-width:22ch;}
+.case-client{font-size:14px;color:var(--text-muted);margin-top:11px;}
+.case-figs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:28px 0;padding:26px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.case-fn{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3vw,38px);letter-spacing:-1.5px;line-height:1;color:var(--accent-text);font-variant-numeric:tabular-nums;}
+.case-ft{font-size:13px;line-height:1.45;color:var(--text-muted);margin-top:10px;max-width:230px;}
+.case-body{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.case-lbl{font-family:var(--font-display);font-weight:600;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--text-faint);margin-bottom:9px;}
+.case-bd{font-size:14.5px;line-height:1.62;color:var(--text-body);margin:0;}
+.case-bd b{color:var(--text);}
+.case-take{margin-top:28px;display:flex;align-items:center;gap:15px;
+  font-family:var(--font-display);font-weight:600;font-size:clamp(17px,2vw,21px);letter-spacing:-.4px;color:var(--text);}
+.case-take::before{content:"";width:30px;height:3px;border-radius:2px;background:var(--accent);flex:none;}
+.cases-note{margin-top:42px;font-size:13px;color:var(--text-muted);font-style:italic;}
+
+/* ============ CLOSE CTA ============ */
+.cta{position:relative;overflow:hidden;background:var(--accent);border-radius:var(--radius-xl);
+  padding:64px 56px;text-align:center;box-shadow:var(--shadow-accent);}
+.cta::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(rgba(94,58,24,.18) 1px,transparent 1.6px);background-size:26px 26px;}
+.cta-in{position:relative;z-index:1;}
+.cta-t{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.6vw,42px);letter-spacing:-1.6px;line-height:1.05;
+  color:var(--text-on-accent);max-width:18ch;margin:0 auto;}
+.cta-s{font-size:17px;line-height:1.55;color:rgba(27,20,16,.74);margin:18px auto 0;max-width:46ch;}
+.cta-btn{margin-top:32px;}
+.cta .btn-dark{background:var(--stone-900);color:#F4EFE6;}
+.cta .btn-dark:hover{background:var(--stone-999);}
+
+/* ============ FOOTER ============ */
+.footer{border-top:1px solid var(--border);background:var(--surface);}
+.footer-in{max-width:var(--maxw);margin:0 auto;padding:34px 32px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;}
+.footer-contact{font-family:var(--font-mono);font-size:12.5px;color:var(--text-muted);}
+.footer-contact a{color:var(--accent-text);}
+.footer-contact .sep{opacity:.5;margin:0 4px;}
+
+/* ============ skip link + focus ============ */
+.skip{position:absolute;left:16px;top:-56px;z-index:100;background:var(--surface);color:var(--text);border:1px solid var(--border-strong);
+  border-radius:var(--radius-sm);padding:10px 16px;font-family:var(--font-display);font-weight:600;font-size:13px;transition:top .18s ease;}
+.skip:focus{top:16px;}
+#main:focus{outline:none;}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--radius-sm);}
+
+/* ============ motion / reveal ============ */
+html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+html.js .reveal.is-in{opacity:1;transform:none;}
+
+/* ============ responsive ============ */
+@media(max-width:880px){
+  .agg-grid{grid-template-columns:1fr 1fr;gap:30px 24px;}
+  .case-body{grid-template-columns:1fr;gap:22px;}
+}
+@media(max-width:760px){
+  .section{padding:52px 0;}
+  .section--tight{padding:40px 0;}
+  .section--dark{padding:60px 0;}
+  .case-figs{grid-template-columns:1fr;gap:18px;}
+}
+@media(max-width:520px){
+  .container,.nav-in,.footer-in{padding-left:20px;padding-right:20px;}
+  .nav-link.hide-sm{display:none;}
+  .agg-grid{grid-template-columns:1fr;}
+  .cta{padding:52px 28px;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  html.js .reveal{opacity:1 !important;transform:none !important;}
+  *{transition:none !important;animation:none !important;}
+}
+@media print{
+  .nav,.skip{display:none;}
+  html.js .reveal{opacity:1 !important;transform:none !important;}
+  .cta,.alert{box-shadow:none !important;}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Gordakey","url":"https://gordakey.com","email":"hello@gordakey.com","description":"Gordakey builds and runs the lead, booking, and follow-up systems that grow home-services businesses. Built, managed, proven.","slogan":"Growth systems for service businesses."}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-in">
+    <a href="/" aria-label="Gordakey home" style="display:inline-flex"><span class="gk-wordmark" style="font-size:23px">Gordakey<i></i></span></a>
+    <div class="nav-links">
+      <a class="nav-link hide-sm" href="proof.html" aria-current="page">Proof</a>
+      <a class="nav-link hide-sm" href="/#pricing">Pricing</a>
+      <a class="btn btn-primary btn-sm" href="book.html">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero-page">
+    <div class="container">
+      <span class="eyebrow">Proof</span>
+      <h1>Real systems, running in real businesses<span class="period">.</span></h1>
+      <p class="lead">Every build below is live in a service business right now. <b>The numbers are real and the work is ours.</b> Client names are kept private, so each is shown by trade and region.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="book.html">Book a call</a>
+        <a class="btn btn-secondary btn-lg" href="/">Back to home</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ ACROSS EVERY CLIENT (dark band) ============ -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="shead reveal" style="margin-bottom:8px">
+        <span class="eyebrow">Across every client</span>
+        <h2>One managed system, full visibility<span class="period">.</span></h2>
+      </div>
+      <div class="agg-grid reveal">
+        <div><div class="agg-n">8</div><span class="agg-u">On the system</span><div class="agg-t">home-services businesses running live right now</div></div>
+        <div><div class="agg-n">100<i>%</i></div><span class="agg-u">Connected</span><div class="agg-t">of call transfers, zero dropped and zero loops</div></div>
+        <div><div class="agg-n">0</div><span class="agg-u">Junk</span><div class="agg-t">spam or misdial records written to any pipeline</div></div>
+        <div><div class="agg-n">24/7</div><span class="agg-u">Covered</span><div class="agg-t">lines answered across every client, every hour</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDIES ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="alert reveal">
+        <span class="alert-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <div>
+          <div class="alert-t">The strongest proof is not on this page.</div>
+          <div class="alert-b">It is the free working demo we build on your own business, before you pay a dollar. Everything below is already shipped and demo-able.</div>
+        </div>
+      </div>
+
+      <div class="cases">
+        <article class="case reveal">
+          <div class="case-top">
+            <span class="case-ix">Case 01</span>
+            <span class="case-sys">24/7 call capture</span>
+            <span class="case-rule"></span>
+            <span class="badge">Home building</span>
+          </div>
+          <h3 class="case-h">Never miss a call, never lose an after-hours lead<span class="period">.</span></h3>
+          <div class="case-client">A North Carolina custom home builder</div>
+          <div class="case-figs">
+            <div><div class="case-fn">24/7</div><div class="case-ft">line answered and every call routed correctly</div></div>
+            <div><div class="case-fn">100%</div><div class="case-ft">of transfers connected, zero drops or loops</div></div>
+            <div><div class="case-fn">0</div><div class="case-ft">junk records created in their CRM</div></div>
+          </div>
+          <div class="case-body">
+            <div><div class="case-lbl">The problem</div><p class="case-bd">Calls came in across sales, warranty, billing, suppliers, and people asking for the owner by name, while the team was on job sites and couldn't always pick up. The most expensive misses were the leads that called after hours and never called back.</p></div>
+            <div><div class="case-lbl">What we built</div><p class="case-bd">A receptionist on the main line that answers every call, around the clock, and routes it correctly: real buyers ring the sales reps together so the first available one picks up; warranty and billing go to the office; suppliers are screened; and anyone asking for the owner by name gets one polite qualifying question before anything is offered. <b>Every call the team can't take, day or night, is captured as a complete lead</b>, with name, callback, project timeline, and financing status.</p></div>
+            <div><div class="case-lbl">How it performs</div><p class="case-bd">Live since June 2026. Across a two-week sample it handled roughly 120 calls. Every transfer it attempted connected, with zero dropped or looped calls on a demanding multi-line office phone system, and it created zero junk records in their CRM. The owner's line is covered 24/7, and no after-hours lead falls through the cracks.</p></div>
+          </div>
+          <div class="case-take">The phone is always answered, and no lead waits until morning.</div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-top">
+            <span class="case-ix">Case 02</span>
+            <span class="case-sys">Full front-office</span>
+            <span class="case-rule"></span>
+            <span class="badge">Landscaping</span>
+          </div>
+          <h3 class="case-h">Every ad lead called within minutes, every call answered<span class="period">.</span></h3>
+          <div class="case-client">A Charlotte-area landscaping and hardscape company</div>
+          <div class="case-figs">
+            <div><div class="case-fn">636</div><div class="case-ft">calls handled in a single month</div></div>
+            <div><div class="case-fn">110</div><div class="case-ft">routed straight to the sales team</div></div>
+            <div><div class="case-fn">~60</div><div class="case-ft">vendor and solicitor calls screened out</div></div>
+          </div>
+          <div class="case-body">
+            <div><div class="case-lbl">The problem</div><p class="case-bd">Hundreds of calls a month, plus paid-ad leads that went cold because no one called them back fast enough. The sales manager could not personally catch every call or chase every form fill.</p></div>
+            <div><div class="case-lbl">What we built</div><p class="case-bd">A two-part engine. On the inbound side, a receptionist answers the main line, routes real buyers straight to the sales manager, and screens out vendors and solicitors. On the outbound side, <b>a speed-to-lead agent calls every paid-ad form lead within minutes of submission</b>, confirms the project, qualifies the fit, and books a callback directly onto the sales manager's calendar.</p></div>
+            <div><div class="case-lbl">How it performs</div><p class="case-bd">In a single month the receptionist handled 636 calls, routed 110 of them to the sales team, and screened roughly 60 vendor and solicitor calls so the team never wasted a minute on them. About one in five calls traced back to paid ads, which is exactly the spend the speed-to-lead agent now protects by calling those leads back in minutes instead of hours.</p></div>
+          </div>
+          <div class="case-take">Ad leads called back in minutes, not hours, and every real call routed to a closer.</div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-top">
+            <span class="case-ix">Case 03</span>
+            <span class="case-sys">Deep CRM integration</span>
+            <span class="case-rule"></span>
+            <span class="badge">Roofing</span>
+          </div>
+          <h3 class="case-h">Every call becomes an assigned job in the CRM, automatically<span class="period">.</span></h3>
+          <div class="case-client">A Charlotte-area roofing, gutters, and siding contractor</div>
+          <div class="case-figs">
+            <div><div class="case-fn">100%</div><div class="case-ft">of real calls auto-logged and assigned in the CRM</div></div>
+            <div><div class="case-fn">0</div><div class="case-ft">manual data entry</div></div>
+            <div><div class="case-fn">0</div><div class="case-ft">junk records in the pipeline</div></div>
+          </div>
+          <div class="case-body">
+            <div><div class="case-lbl">The problem</div><p class="case-bd">Leads from phone calls were only as good as whoever remembered to type them in. Real jobs needed to land in their roofing CRM assigned to the right person, not sit in a notebook or an inbox, while spam and wrong numbers cluttered everything.</p></div>
+            <div><div class="case-lbl">What we built</div><p class="case-bd">A receptionist that answers, qualifies the caller, checks the service area, and recognizes existing customers. On every genuine call it <b>writes the lead straight into the CRM as a contact and a job, then immediately assigns it to the owner</b> so it never sits unseen. A built-in filter keeps misdials, spam, and vendor calls from ever creating a junk record, while the team still gets an emailed report on every single call.</p></div>
+            <div><div class="case-lbl">How it performs</div><p class="case-bd">Live since June 2026 and verified end to end. This is the depth most off-the-shelf tools simply cannot reach: a phone call turns into an assigned CRM job with no one touching a keyboard, and the pipeline stays clean. The system that catches the lead and the CRM that runs the business are wired together as one.</p></div>
+          </div>
+          <div class="case-take">The call ends, and the job is already in the CRM, assigned and ready to work.</div>
+        </article>
+
+        <article class="case reveal">
+          <div class="case-top">
+            <span class="case-ix">Case 04</span>
+            <span class="case-sys">Managed retainer, monthly scorecard</span>
+            <span class="case-rule"></span>
+            <span class="badge">8 businesses</span>
+          </div>
+          <h3 class="case-h">Eight businesses, one managed system, full visibility<span class="period">.</span></h3>
+          <div class="case-client">Eight home-services businesses</div>
+          <div class="case-figs">
+            <div><div class="case-fn">8</div><div class="case-ft">home-services businesses on the system</div></div>
+            <div><div class="case-fn">100%</div><div class="case-ft">of calls logged and visible to the owner</div></div>
+            <div><div class="case-fn">Monthly</div><div class="case-ft">ROI scorecard, calls to leads to dollars</div></div>
+          </div>
+          <div class="case-body">
+            <div><div class="case-lbl">The problem</div><p class="case-bd">Most owners have no idea what their phone system is actually doing. Leads get missed with no accountability, and most agencies hand over a black box.</p></div>
+            <div><div class="case-lbl">What we built</div><p class="case-bd">A live dashboard for each client that shows every call, flags every missed lead, and opens the full transcript and recording of any call. <b>Owners can mark a lead handled the moment they follow up</b>, so they act on leads in one place and we can see the follow-through. On top of that, a monthly scorecard reports exactly what the system delivered: calls answered, leads captured, vendors screened, callbacks booked.</p></div>
+            <div><div class="case-lbl">How it performs</div><p class="case-bd">Running across eight home-services businesses, each on its own secured, live feed. Owners get daily proof their system is working, not a promise, and a clear monthly picture of what it returned. The result is a managed service with nothing hidden: the engine runs, and you can watch it run.</p></div>
+          </div>
+          <div class="case-take">A managed system you can watch working, every single day.</div>
+        </article>
+      </div>
+
+      <p class="cases-note reveal">Client names are kept private. Each build is shown by trade and region; the figures are pulled from live production.</p>
+    </div>
+  </section>
+
+  <!-- ============ CLOSE ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta reveal">
+        <div class="cta-in">
+          <h2 class="cta-t">See it built on your own business first<span style="color:var(--stone-900)">.</span></h2>
+          <p class="cta-s">A free working demo on your own business, then a free audit that puts a dollar number on every leak. No pressure, no contract.</p>
+          <div class="cta-btn"><a class="btn btn-dark btn-lg" href="book.html">Book a call</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-in">
+    <span class="gk-wordmark" style="font-size:19px">Gordakey<i></i></span>
+    <div class="footer-contact"><a href="mailto:hello@gordakey.com">hello@gordakey.com</a><span class="sep">/</span>gordakey.com</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document;
+  var nav=d.querySelector('.nav');
+  function onScroll(){ if(nav) nav.setAttribute('data-scrolled',(window.pageYOffset||0)>8?'true':'false'); }
+  addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var els=[].slice.call(d.querySelectorAll('.reveal'));
+  function revealAll(){ els.forEach(function(el){ el.classList.add('is-in'); }); }
+  var rm=false; try{ rm=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  if(rm || !('IntersectionObserver' in window)){ revealAll(); return; }
+  try{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -10% 0px',threshold:0.12});
+    els.forEach(function(el){ io.observe(el); });
+  }catch(e){ revealAll(); }
+})();
+</script>
+
+</body>
+</html>
